@@ -1,8 +1,15 @@
 import cv2
 import os
 
+print('Insertar Nombre:')
+name = input().replace(' ', '')
+
 try:
   os.makedirs('./images')
+except:
+  pass
+try:
+  os.makedirs(f'./images/{name}')
 except:
   pass
 
@@ -21,7 +28,7 @@ while 1:
     cv2.rectangle(image_window, (x,y), (x+w, y+h), (255,0,0), 4)
     count += 1
 
-    cv2.imwrite(f'images/Cristhian/Cristhian_{count}.jpg', grays[y:y+h, x:x+w])
+    cv2.imwrite(f'images/{name}/{name}_{count}.jpg', grays[y:y+h, x:x+w])
     cv2.imshow("Creando Dataset", image_window)
 
   if cv2.waitKey(1) & 0xFF == ord('q'):
