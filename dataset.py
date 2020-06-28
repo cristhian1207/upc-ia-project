@@ -4,14 +4,10 @@ import os
 print('Insertar Nombre:')
 name = input().replace(' ', '')
 
-try:
+if not os.path.exists('./images'):
   os.makedirs('./images')
-except:
-  pass
-try:
+if not os.path.exists(f'./images/{name}'):
   os.makedirs(f'./images/{name}')
-except:
-  pass
 
 web_cam = cv2.VideoCapture(0)
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
