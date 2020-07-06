@@ -1,13 +1,21 @@
+
+import sys
+sys.path.insert(0, 'dao/')
+sys.path.insert(0, 'utils/')
+sys.path.insert(0, 'entities/')
+sys.path.insert(0, 'database/')
+sys.path.insert(0, 'services/')
+
 import cv2
 import os
+import utils
 
-print('Insertar Nombre:')
-name = input().replace(' ', '')
+dni = utils.createUser()
 
 if not os.path.exists('./images'):
   os.makedirs('./images')
-if not os.path.exists(f'./images/{name}'):
-  os.makedirs(f'./images/{name}')
+if not os.path.exists(f'./images/{dni}'):
+  os.makedirs(f'./images/{dni}')
 
 web_cam = cv2.VideoCapture(0)
 faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -24,7 +32,7 @@ while 1:
     cv2.rectangle(image_window, (x,y), (x+w, y+h), (255,0,0), 4)
     count += 1
 
-    cv2.imwrite(f'images/{name}/{name}_{count}.jpg', grays[y:y+h, x:x+w])
+    cv2.imwrite(f'images/{dni}/{dni}_{count}.jpg', grays[y:y+h, x:x+w])
     cv2.imshow("Creando Dataset", image_window)
 
   if cv2.waitKey(1) & 0xFF == ord('q'):
