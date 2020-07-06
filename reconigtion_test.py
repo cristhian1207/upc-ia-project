@@ -37,7 +37,7 @@ while True:
     font = cv2.FONT_HERSHEY_SIMPLEX            
 
     dni = etiquetas[id_]
-    # dni = f'{conf}'
+    dni = f'{conf}'
 
     color = (255,255,255)
     grosor = 2
