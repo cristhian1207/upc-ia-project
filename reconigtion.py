@@ -36,15 +36,11 @@ while True:
     roi_color = marco[y:y+h, x:x+w]
 
     id_, conf = reconocimiento.predict(roi_gray)
-    if conf >= 4  and conf < 85:
+    if conf <= 50:
       font = cv2.FONT_HERSHEY_SIMPLEX            
 
       dni = etiquetas[id_]
-
-      if conf > 50:
-        dni = ''
-      else:
-        finded = True
+      finded = True
 
       color = (255,255,255)
       grosor = 2
