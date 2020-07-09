@@ -36,8 +36,7 @@ while True:
     id_, conf = reconocimiento.predict(roi_gray)
     font = cv2.FONT_HERSHEY_SIMPLEX            
 
-    dni = etiquetas[id_]
-    dni = f'{conf}'
+    dni = f'{id_}#{conf}'
 
     color = (255,255,255)
     grosor = 2
