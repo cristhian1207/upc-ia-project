@@ -1,2 +1,5 @@
 opencv-python
-mysql-connector
+mysql-connector-python
+Pillow
+numpy
+opencv-contrib-python
