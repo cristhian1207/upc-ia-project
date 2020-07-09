@@ -1,3 +1,5 @@
+Execute the sql script in mysql: database/script.sql
+
 Install the required libraries with the command:  
   ```pip install [LIBRARY NAME]```  
   or  
