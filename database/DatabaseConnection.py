@@ -1,7 +1,7 @@
 class DatabaseConnection():
   def __init__(self):
-    import mysql_connection
-    self.connection = mysql_connection.get_connection()
+    import mysql_connection as connection
+    self.connection = connection.get_connection()
 
   def commit(self):
     self.connection.commit()

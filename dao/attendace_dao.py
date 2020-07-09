@@ -4,7 +4,7 @@ def insert(dni, conn):
     INSERT INTO ATTENDANCES (DNI) 
     VALUES (%s)
   """
-  with conn.cursor() as c:
-    c.execute(query, [dni])
-    attendaceId = c.lastrowid
+  c = conn.cursor()
+  c.execute(query, [dni])
+  attendaceId = c.lastrowid
   return attendaceId
